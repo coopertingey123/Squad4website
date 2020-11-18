@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+
+<style>
+
+    body {
+        margin: 0;
+    }
+
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        height: 60px;
+        width: 100%;
+        background-color: navy;
+        font-family: 'Lato', sans-serif;
+
+    }
+
+    .my-name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        color: white;
+    }
+
+    .my-name>a{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+    }
+
+    .link a{
+        display: flex;
+        width: 150px;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        background-color: rgb(0, 0, 168);
+        text-decoration: none;
+        
+    }
+    
+    .container a:hover {
+        background-color: rgb(0, 0, 90) ;
+    }
+
+    .navbar-top-left {
+        display: flex;
+        width: 100%;
+    }
+
+    .body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar-top-right {
+        display: flex;
+    }
+    .item-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .item-name {
+        font-weight: 50px;
+        font-size: 50px;
+    }
+    .item-price {
+        font-size: 30px;
+        font-weight: 50px;
+    }
+
+
+</style>
+
+<body>
+    
+    <div class="container">
+
+        <div class="navbar">
+
+            <div class="navbar-top-left">
+                <div class="my-name">
+                    <a href="name">Squad 4</a>
+                </div>
+                <div class="link">
+                    <a href="#">Women's Apparel</a>
+                </div>
+                <div class="link">
+                    <a href="#">Men's Apparel</a>
+                </div>
+            </div>
+
+            <div class="navbar-top-right">
+                <div class="link">
+                    <a href="#">Logout</a>
+                </div>
+                <div class="link">
+                    <a href="#">My cart</a>
+                </div>
+            </div>
+        </div>
+            <div class="body">
+
+                <div class="item-container">
+                    <div class="item-name">
+                        Squad 4 Hoodie
+                    </div>
+                    <div class="item-image">
+                        <img src="hoodie.webp" alt="">
+                    </div>
+                    <div class="item-price">
+                        $15
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer">
+
+            </div>
+
+    </div>
+
+</body>
+<script>
+    class Item {
+        constructor(name, price, size, gender, color) {
+            this.price = price;
+            this.name = name;
+            this.size = size;
+            this.gender = gender;
+            this.color = color;
+        }
+    }
+</script>
+</html>
