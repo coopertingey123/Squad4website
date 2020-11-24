@@ -1,5 +1,6 @@
 body {
-    margin: 0;
+    margin: 0px;
+    width: 100vw;
 }
 
 
@@ -126,4 +127,13 @@ body {
     flex-direction: column;
     align-items: center;
     font-size: 30px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 20px;
 }

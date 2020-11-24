@@ -14,19 +14,21 @@ ma = Marshmallow(app)
 CORS(app)
 
 class Item(db.Model):
-    id = 
-    name = 
-    description = 
-    price = 
-    size = 
-    color = 
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, unique=True, nullable=False)
+    description = db.Column(db.String, nullable=False)
+    price = db.Column(db.Integer, nullable=False)
+    # size = user chooses from small, m, L, and XL
+    # color = user chooses from a list of colors
 
-    def __init__(self, name, description, price, size, color):
+    def __init__(self, name, description, price):
         self.name = name
         self.description = description
         self.price = price
-        self.size = size
-        self.color = color
+
+
+        # self.size = size
+        # self.color = color
 
 class ItemSchema(ma.Schema):
     class Meta:
@@ -35,39 +37,6 @@ class ItemSchema(ma.Schema):
 item_schema = ItemSchema()
 multiple_items_schema = ItemSchema(many=True)
 
-class User(db.Model):
-    id = 
-    username = 
-    password = 
-    email = 
-
-    def __init__(self, username, password, email):
-        self.username = username
-        self.password = password
-        self.email = email
-
-class UserSchema(ma.Schema):
-    class Meta:
-        fields = ("id", "username", "email")
-
-user_schema = UserSchema()
-multiple_users_schema = UserSchema(many=True)
-
-@app.route("/user/add", methods=["POST"])
-def add_user():
-    if request.content_type != "application/json":
-        return "Error: Data must be sent as JSON."
-    
-    post_data = request.get_json()
-    username = post_data.get("username")
-    password = post_data.get("password")
-    email = post_data.get("email")
-
-    record = User(username, password, email)
-    db.session.add(record)
-    db.session.commit()
-
-    return jsonify("Data added successfully")
 
 @app.route("/item/add", methods=["POST"])
 def add_item():
@@ -86,20 +55,22 @@ def add_item():
 
     return jsonify("Data added successfully")
 
-@app.route("/item/add-custom", methods=["POST"])
-def add_item-custom():
-    if request.content_type != "application/json":
-        return "Error: Data must be sent as JSON."
+
+
+# @app.route("/item/add-custom", methods=["POST"])
+# def add_item-custom():
+#     if request.content_type != "application/json":
+#         return "Error: Data must be sent as JSON."
     
-    post_data = request.get_json()
-    size = post_data.get("size")
-    color = post_data.get("color")
+#     post_data = request.get_json()
+#     size = post_data.get("size")
+#     color = post_data.get("color")
     
 
-    record = Item(name, description, price)
-    db.session.add(record)
-    db.session.commit()
+#     record = Item(name, description, price)
+#     db.session.add(record)
+#     db.session.commit()
 
-    return jsonify("Data added successfully")
+#     return jsonify("Data added successfully")
 
     
